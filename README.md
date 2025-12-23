@@ -20,4 +20,46 @@ The pipeline includes multi-head prediction for **classification, bounding box r
 - Folder: [`semantic-segmentation`](./semantic-segmentation)
 
 Built **DeepLabV3 and DeepLabV3+** semantic segmentation models from core components, including **ASPP modules** and DeepLab heads on ResNet backbones.  
-Implemented full training and evaluation pi
+Implemented full training and evaluation pipelines using **mIoU**, with attention to **class imbalance** in pixel-level prediction.
+
+**Tech:** PyTorch, DeepLab, ASPP, Semantic Segmentation, mIoU
+
+---
+
+## GAN Image Generation: DCGAN  
+- Folder: [`gan-generation`](./GAN-generation)
+
+Implemented **DCGAN** with **upsample + convolution** generator blocks and convolutional discriminators.  
+Applied architectural refinements and training stabilization techniques to improve convergence and image quality.
+
+**Tech:** PyTorch, GAN, DCGAN, Convolutional Generative Models
+
+---
+
+## Image Classification: MNIST / CIFAR-100  
+- Folder: [`image-classification`](./image-classification)
+
+Trained **FCN and CNN** models for image classification on **MNIST** and **CIFAR-100**, including custom loss implementation, model tuning, and feature analysis.  
+Visualized learned representations using **t-SNE** to study class separability.
+
+- Best CIFAR-100 accuracy: **~61%**
+
+**Tech:** PyTorch, CNN, Image Classification, t-SNE
+
+---
+
+## FollowMe: Assistive Perception  
+- Folder: [`followme-assistive-perception`](./FollowMe-Blind-Aid)
+
+A real-time indoor assistive perception system for obstacle awareness.  
+The system combines **YOLOv5 object detection** with **MiDaS-based depth estimation**, fusing RGB and depth information to estimate obstacle distance and provide **low-latency audio feedback**.  
+Designed lightweight post-processing for improved robustness in real-world hallway environments.
+
+- **~85% system accuracy**
+- **~120ms average latency** (worst-case ~230ms)
+
+**Tech:** YOLOv5, MiDaS, Depth Estimation, Real-time Vision, Multi-sensor Fusion
+
+---
+
+**Author:** Chuang Ma
