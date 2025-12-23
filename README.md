@@ -1,6 +1,6 @@
 # deep-learning-patterns-for-vision
 
-A collection of practical computer vision projects implemented in **PyTorch**, covering **image classification**, **face detection**, **semantic segmentation**, and **GAN-based image generation**, along with a **real-time assistive perception system** that integrates object detection and depth estimation.
+A collection of practical computer vision projects implemented in **PyTorch**, covering **face detection**, **semantic segmentation**, **GAN-based image generation**, and **image classification**, along with a **real-time assistive perception system** that integrates object detection and depth estimation.
 
 Detailed design choices and results are documented in the reports inside each project folder.
 
@@ -30,7 +30,7 @@ Implemented full training and evaluation pipelines using **mIoU**, with attentio
 - Folder: [`gan-generation`](./GAN-generation)
 
 Implemented **DCGAN** with **upsample + convolution** generator blocks and convolutional discriminators.  
-Applied architectural refinements and training stabilization techniques to improve convergence and image quality.
+Applied architectural refinements to improve training stability and image generation quality.
 
 **Tech:** PyTorch, GAN, DCGAN, Convolutional Generative Models
 
