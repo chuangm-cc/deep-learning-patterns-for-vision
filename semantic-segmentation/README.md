@@ -2,7 +2,7 @@
 
 This project implements a semantic segmentation system based on DeepLab architectures, covering data preparation, network design, training, evaluation, and qualitative analysis.  
 **For full implementation details, experiments, and analysis, please refer to the report:**  
-📄 [`semantic_segmentation_report.pdf`](./semantic_segmentation_report.pdf)
+[`semantic_segmentation_report.pdf`](./semantic_segmentation_report.pdf)
 
 ## Overview
 

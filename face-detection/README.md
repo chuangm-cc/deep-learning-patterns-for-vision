@@ -2,7 +2,7 @@
 
 This project implements a complete anchor-based face detection system, covering data analysis, model architecture design, training, and inference.  
 **For detailed implementation, experiments, and analysis, please refer to the full report:**  
-📄 [`face_detection_report.pdf`](./face_detection_report.pdf)
+[`face_detection_report.pdf`](./face_detection_report.pdf)
 
 ## Overview
 
