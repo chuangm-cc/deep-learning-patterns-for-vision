@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Understand your data \(POINTS : 30\)}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Write code to do the following statistical analysis}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Visualize the first 4 images and their ground truths, including the faces \(in green\) and landmarks \(in red\).}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Initialize your detector and build up the forward path \(./detector/mydetector.py\).}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Initialize backbone and gather intermediate layers, the layers to-be-gather are defined in cfg['return layers']}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Understand how we make the classification head. What is the output dimension of the head? And, for the binary classification, is sigmoid mathematically equivalent to softmax? Show your proof.}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Following the code of the classification head, finish the regression head and landmarks head.}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.4}{Complete the forward function of your detection. The process is Input image -> gather feature maps -> FPN ->you got 3 feature pyramids -> for each feature pyramid, apply a predefined SSH module to it ->for each feature pyramid, apply three heads to it.}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Dataloader \(data/dataloader.py\)}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{initialize dataloader}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{getitem}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Anchor\(anchor.py\)}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Name all hyperparameters that correspond to the number of anchors. I.e., which hyperparameters in config will affect the number of anchors? Briefly describe their physical meanings in your words}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{If we enlarge the width and height of the image by x, how would the number of anchors change?}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{For anchors on different feature pyramids, are they the same size? Explain your observations and explain why it is designed in such a way.}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Calculate the Loss}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{In utils/boxutils.py, complete jaccard function.}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Explain the following code in your words:}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{NMS}{}% 19
+\BOOKMARK [1][-]{section.7}{Training}{}% 20
+\BOOKMARK [1][-]{section.8}{Testing}{}% 21
