@@ -19,7 +19,7 @@ Trained FCN/CNN baselines and ran systematic fine-tuning on CIFAR-100. Includes 
 - Best CIFAR-100 accuracy: **~61%**
 - Folder: [`image-classification`](.image-classification)
 
-- ### FollowMe: Assistive Perception (Detection + Depth + Audio)
+### FollowMe: Assistive Perception (Detection + Depth + Audio)
 A real-time indoor hallway assistance prototype on embedded hardware, combining **YOLOv5 (pretrained + self-trained)** with **MiDaS-based relative depth** to make distance estimation more robust under noisy depth measurements. Includes lightweight post-processing (whitelisting / occurrence counting / pixel selection) and audio feedback.
 - Key results: **~85% system accuracy**, **~120ms avg latency** (worst-case ~230ms)
 - Folder: [`followme-assistive-perception`](./followme-assistive-perception)
