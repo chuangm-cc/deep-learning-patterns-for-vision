@@ -11,6 +11,16 @@ The system integrates object detection, depth estimation, and post-processing lo
 
 The project emphasizes practical trade-offs between **accuracy, robustness, and inference speed**, targeting real-world usability rather than isolated model performance.
 
+## Hardware and methods
+
+Methods:
+
+![methods](assets/1.png)
+
+Our hardware:
+
+![methods](assets/2.png)
+
 ## System Pipeline
 
 The system follows a multi-stage perception pipeline:
@@ -34,6 +44,10 @@ This design enables robust perception even when raw depth measurements are noisy
 
 A comparison against Faster R-CNN demonstrates that YOLO provides significantly lower latency while maintaining acceptable accuracy for nearby obstacles.
 
+![methods](assets/3.png)
+
+![methods](assets/6.png)
+
 ## Depth Estimation Module
 
 - Uses **MiDaS** to generate a smooth, relative depth map from RGB images
@@ -41,6 +55,8 @@ A comparison against Faster R-CNN demonstrates that YOLO provides significantly 
   - Reduce noise
   - Reliably locate the closest point of an object
 - Depth fusion improves distance estimation accuracy compared to using LiDAR alone
+
+![methods](assets/4.png)
 
 ## Post-Processing and Robustness
 

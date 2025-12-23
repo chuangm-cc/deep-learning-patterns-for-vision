@@ -11,6 +11,21 @@ The implementation follows the **DeepLabV3 / DeepLabV3+** design philosophy, emp
 
 Experiments are conducted on the Pascal VOC dataset, and results are evaluated using mean Intersection-over-Union (mIoU).
 
+## Results
+
+Some visulization:
+![image description](assets/1.png)
+
+Comparing:
+![image description](assets/2.png)
+
+
+- Stable convergence of DeepLabV3+ during training
+- Best mIoU achieved around **~0.60** on the validation set
+![image description](assets/6.png)
+- Improved boundary quality and class consistency when using DeepLabV3+
+- Side-by-side visualization of RGB images, ground truth masks, and model predictions
+
 ## Model Architecture
 
 The segmentation network is built around the following components:
@@ -30,13 +45,6 @@ The comparison between DeepLabV3 and DeepLabV3+ highlights the impact of combini
 - Alternative loss functions explored to address **class imbalance**, inspired by detection tasks
 - Performance monitored using **mIoU**, which better reflects segmentation quality than pixel accuracy
 
-## Results
-
-- Stable convergence of DeepLabV3+ during training
-- Best mIoU achieved around **~0.60** on the validation set
-- Improved boundary quality and class consistency when using DeepLabV3+
-- Side-by-side visualization of RGB images, ground truth masks, and model predictions
-
 ## Segment Anything Model (SAM) Comparison
 
 In addition to supervised semantic segmentation, the project evaluates the **Segment Anything Model (SAM)** on the same images:
@@ -44,3 +52,6 @@ In addition to supervised semantic segmentation, the project evaluates the **Seg
 - Semantic segmentation predicts **class-aware pixel labels**
 - SAM produces **class-agnostic object masks** without task-specific training
 - The comparison highlights trade-offs between supervised, task-specific models and large-scale foundation models
+
+SAM model:
+![image description](assets/5.png)

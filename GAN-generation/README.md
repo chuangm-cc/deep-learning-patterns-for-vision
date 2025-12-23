@@ -11,6 +11,20 @@ The work emphasizes understanding the adversarial training dynamics and addressi
 
 Experiments are conducted on small-scale image datasets to highlight the impact of architectural and training choices.
 
+## Results
+
+Basic augmentation:
+
+![image description](assets/1.png)
+![image description](assets/2.png)
+
+Advanced augmentation:
+
+![image description](assets/3.png)
+![image description](assets/4.png)
+
+Check [`GAN_report.pdf`](./GAN_report.pdf) for more results.
+
 ## Model Architecture
 
 The baseline model follows the DCGAN design with key modifications:
@@ -41,12 +55,3 @@ To improve convergence and sample quality, residual connections are introduced:
 - Residual blocks added to **both generator and discriminator**
 
 These modifications help mitigate vanishing gradients and enable more stable adversarial training.
-
-## Results
-
-- Clear improvement in visual quality as training progresses
-- Advanced data augmentation significantly stabilizes training
-- Residual connections lead to:
-  - Faster convergence
-  - Sharper and more consistent generated samples
-- Side-by-side comparisons demonstrate the effect of architectural changes

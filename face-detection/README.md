@@ -11,6 +11,16 @@ The design is closely related to **region-based detection pipelines (e.g., Fast 
 
 The implementation emphasizes how region-level reasoning, feature pyramids, and anchor-based matching are combined in practice.
 
+## Detection Results
+
+![result](assets/2.png)
+
+![result](assets/3.png)
+
+![result](assets/4.png)
+
+![result](assets/5.png)
+
 ## Detection Pipeline
 
 The detector follows a region-based detection paradigm:
@@ -34,10 +44,3 @@ The detector consists of the following components:
   - Binary face / background classification  
   - Bounding box regression  
   - Facial landmark regression  
-
-## Results
-
-- Robust face detection across scales and crowded scenes
-- Accurate bounding box localization and landmark estimation
-- Stable multi-task training behavior
-- Qualitative detection results on real-world images
