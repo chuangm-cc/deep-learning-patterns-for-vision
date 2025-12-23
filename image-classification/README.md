@@ -2,7 +2,7 @@
 
 This project explores deep learning–based image classification using fully connected networks and convolutional neural networks (CNNs).  
 **Detailed methodology, experiments, and analysis can be found in the full report:**  
-[`Image Classification Report.pdf`](./Image Classification Report.pdf)
+[`image_classification_report.pdf`](./image_classification_report.pdf)
 
 ## Overview
 
