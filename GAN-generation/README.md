@@ -2,7 +2,7 @@
 
 This project implements and extends Generative Adversarial Networks (GANs) for image synthesis, focusing on training stability and visual quality.  
 **For detailed architecture design, training procedures, and experimental results, please refer to the report:**  
-📄 [`GAN_report.pdf`](./reports/GAN_report.pdf)
+[`GAN_report.pdf`](./reports/GAN_report.pdf)
 
 ## Overview
 
