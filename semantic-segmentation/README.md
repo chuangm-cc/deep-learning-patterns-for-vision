@@ -58,4 +58,5 @@ In addition to supervised semantic segmentation, the project evaluates the **Seg
 - The comparison highlights trade-offs between supervised, task-specific models and large-scale foundation models
 
 SAM model:
+
 ![image description](assets/5.png)
