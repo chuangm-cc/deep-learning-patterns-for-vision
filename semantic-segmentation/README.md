@@ -24,7 +24,9 @@ Comparing:
 
 - Stable convergence of DeepLabV3+ during training
 - Best mIoU achieved around **~0.60** on the validation set
+  
 ![image description](assets/6.png)
+
 - Improved boundary quality and class consistency when using DeepLabV3+
 - Side-by-side visualization of RGB images, ground truth masks, and model predictions
 
