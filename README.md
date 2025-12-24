@@ -1,29 +1,65 @@
 # deep-learning-patterns-for-vision
 
-A collection of practical computer vision projects in PyTorch, spanning **image classification**, **face detection**, **semantic segmentation**, and **GAN-based image generation**, plus a **real-time assistive perception system** that integrates detection + depth estimation for obstacle awareness.
+A collection of practical computer vision projects implemented in **PyTorch**, covering **face detection**, **semantic segmentation**, **GAN-based image generation**, and **image classification**, along with a **real-time assistive perception system** that integrates object detection and depth estimation.
 
-### Face Detection: Anchor-based Detector (Backbone + FPN + Multi-head)
-Implemented an anchor-based face detector with **ResNet50 backbone**, **FPN**, **SSH modules**, classification/regression/landmark heads, plus IoU-based matching and NMS. Includes dataset statistics and qualitative visualizations.
+Detailed design choices and results are documented in the reports inside each project folder.
+
+---
+
+## Face Detection: Anchor-based Detector  
 - Folder: [`face-detection`](./face-detection)
 
-### Semantic Segmentation: DeepLabV3/V3+ from Core Blocks
-Built DeepLab-style segmentation networks (ASPP modules, DeepLab heads), training loop with backbone LR scaling and step LR scheduler, and experimented with alternative loss functions for class imbalance.
+Implemented a complete **anchor-based face detection system** using a **ResNet-50 backbone**, **Feature Pyramid Network (FPN)**, and **SSH modules**.  
+The pipeline includes multi-head prediction for **classification, bounding box regression, and facial landmarks**, with **IoU-based anchor matching** and **Non-Maximum Suppression (NMS)** for post-processing.
+
+**Tech:** PyTorch, ResNet, FPN, Anchor-based Detection, IoU, NMS
+
+---
+
+## Semantic Segmentation: DeepLabV3 / DeepLabV3+  
 - Folder: [`semantic-segmentation`](./semantic-segmentation)
 
-### GAN Image Generation: DCGAN + Training Stabilization
-Implemented DCGAN with **upsample+conv** generator blocks, added data augmentation, and explored architectural variants (e.g., residual blocks) to improve convergence and visual quality.
-- Folder: [`gan-generation`](GAN-generation)
+Built **DeepLabV3 and DeepLabV3+** semantic segmentation models from core components, including **ASPP modules** and DeepLab heads on ResNet backbones.  
+Implemented full training and evaluation pipelines using **mIoU**, with attention to **class imbalance** in pixel-level prediction.
 
-### Image Classification: MNIST / CIFAR-100 + Fine-tuning + t-SNE
-Trained FCN/CNN baselines and ran systematic fine-tuning on CIFAR-100. Includes training curves, prediction visualizations, and t-SNE feature embeddings.
+**Tech:** PyTorch, DeepLab, ASPP, Semantic Segmentation, mIoU
+
+---
+
+## GAN Image Generation: DCGAN  
+- Folder: [`gan-generation`](./GAN-generation)
+
+Implemented **DCGAN** with **upsample + convolution** generator blocks and convolutional discriminators.  
+Applied architectural refinements to improve training stability and image generation quality.
+
+**Tech:** PyTorch, GAN, DCGAN, Convolutional Generative Models
+
+---
+
+## Image Classification: MNIST / CIFAR-100  
+- Folder: [`image-classification`](./image-classification)
+
+Trained **FCN and CNN** models for image classification on **MNIST** and **CIFAR-100**, including custom loss implementation, model tuning, and feature analysis.  
+Visualized learned representations using **t-SNE** to study class separability.
+
 - Best CIFAR-100 accuracy: **~61%**
-- Folder: [`image-classification`](image-classification)
 
-### FollowMe: Assistive Perception (Detection + Depth + Audio)
-A real-time indoor hallway assistance prototype on embedded hardware, combining **YOLOv5 (pretrained + self-trained)** with **MiDaS-based relative depth** to make distance estimation more robust under noisy depth measurements. Includes lightweight post-processing (whitelisting / occurrence counting / pixel selection) and audio feedback.
-- Key results: **~85% system accuracy**, **~120ms avg latency** (worst-case ~230ms)
+**Tech:** PyTorch, CNN, Image Classification, t-SNE
+
+---
+
+## FollowMe: Assistive Perception  
 - Folder: [`followme-assistive-perception`](./FollowMe-Blind-Aid)
 
---- 
-Author： Chuang Ma
+A real-time indoor assistive perception system for obstacle awareness.  
+The system combines **YOLOv5 object detection** with **MiDaS-based depth estimation**, fusing RGB and depth information to estimate obstacle distance and provide **low-latency audio feedback**.  
+Designed lightweight post-processing for improved robustness in real-world hallway environments.
 
+- **~85% system accuracy**
+- **~120ms average latency** (worst-case ~230ms)
+
+**Tech:** YOLOv5, MiDaS, Depth Estimation, Real-time Vision, Multi-sensor Fusion
+
+---
+
+**Author:** Chuang Ma
