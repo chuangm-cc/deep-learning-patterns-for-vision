@@ -1,62 +1,71 @@
 # Semantic Segmentation with Deep Learning
 
-This project implements a semantic segmentation system based on DeepLab architectures, covering data preparation, network design, training, evaluation, and qualitative analysis.  
-**For full implementation details, experiments, and analysis, please refer to the report:**  
+This project implements a **semantic segmentation pipeline** based on **DeepLabV3 / DeepLabV3+**, focusing on **dense pixel-level prediction** and multi-scale semantic understanding.
+
+For detailed experiments and analysis, please refer to:  
 [`semantic_segmentation_report.pdf`](./semantic_segmentation_report.pdf)
+
+---
 
 ## Overview
 
-This project focuses on **pixel-level semantic understanding**, where each pixel in an image is assigned a semantic category.  
-The implementation follows the **DeepLabV3 / DeepLabV3+** design philosophy, emphasizing multi-scale context aggregation and high-resolution prediction.
+Semantic segmentation aims to assign a **semantic class to every pixel** in an image.  
+This project follows the DeepLab design principles:
 
-Experiments are conducted on the Pascal VOC dataset, and results are evaluated using mean Intersection-over-Union (mIoU).
+- Dense prediction on feature maps
+- Atrous (dilated) convolution to enlarge receptive fields without downsampling
+- Multi-scale context modeling using ASPP
+- High-resolution output via upsampling and feature fusion
+
+Experiments are conducted on **Pascal VOC**, evaluated using **mean Intersection-over-Union (mIoU)**.
+
+---
 
 ## Results
 
-Some visulization:
+Visualization examples:
 
 ![image description](assets/1.png)
 
-Comparing:
+Comparison between predictions:
 
 ![image description](assets/2.png)
 
+- Stable training convergence
+- Best validation **mIoU ≈ 0.60**
+- DeepLabV3+ shows improved boundary quality
 
-- Stable convergence of DeepLabV3+ during training
-- Best mIoU achieved around **~0.60** on the validation set
-  
 ![image description](assets/6.png)
 
-- Improved boundary quality and class consistency when using DeepLabV3+
-- Side-by-side visualization of RGB images, ground truth masks, and model predictions
+---
 
 ## Model Architecture
 
-The segmentation network is built around the following components:
+The network consists of:
 
 - **ResNet-50 backbone** (ImageNet pretrained)
-- **Atrous Spatial Pyramid Pooling (ASPP)** for multi-scale context modeling
-- **DeepLabV3 head** for high-level semantic prediction
-- **DeepLabV3+ head**, which additionally incorporates low-level features for sharper object boundaries
+- **ASPP (Atrous Spatial Pyramid Pooling)** for multi-scale context aggregation
+- **DeepLabV3 head** for semantic classification
+- **DeepLabV3+ head** with low-level feature fusion for sharper boundaries
 
-The comparison between DeepLabV3 and DeepLabV3+ highlights the impact of combining low-level spatial details with high-level semantic features.
+---
 
-## Training and Optimization
+## Training and Evaluation
 
-- Backbone learning rate scaled to **0.1×** of the main learning rate
+- Backbone learning rate set to **0.1×** of the main learning rate
 - Step-based learning rate scheduler
-- Standard **Cross-Entropy Loss**
-- Alternative loss functions explored to address **class imbalance**, inspired by detection tasks
-- Performance monitored using **mIoU**, which better reflects segmentation quality than pixel accuracy
+- **Cross-Entropy Loss** as baseline
+- Alternative losses explored to mitigate **class imbalance**
+- Performance measured using **mIoU**, which balances per-class segmentation quality
+
+---
 
 ## Segment Anything Model (SAM) Comparison
 
-In addition to supervised semantic segmentation, the project evaluates the **Segment Anything Model (SAM)** on the same images:
+A qualitative comparison with **SAM** highlights:
 
-- Semantic segmentation predicts **class-aware pixel labels**
-- SAM produces **class-agnostic object masks** without task-specific training
-- The comparison highlights trade-offs between supervised, task-specific models and large-scale foundation models
-
-SAM model:
+- DeepLab: **class-aware dense prediction**
+- SAM: **class-agnostic object masks**
+- Trade-offs between supervised task-specific models and foundation models
 
 ![image description](assets/5.png)
