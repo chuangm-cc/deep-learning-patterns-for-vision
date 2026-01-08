@@ -1,4 +1,4 @@
-# Semantic Segmentation with Deep Learning
+# Semantic Segmentation
 
 This project implements a **semantic segmentation pipeline** based on **DeepLabV3 / DeepLabV3+**, focusing on **dense pixel-level prediction** and multi-scale semantic understanding.
 
